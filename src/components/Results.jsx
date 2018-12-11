@@ -49,7 +49,7 @@ export default class Results extends Component {
   render() {
     const { courses } = this.state;
     return (
-      <div className="container">
+      <div className="container mt-3">
         <div className="row">
           {courses.map(course => (
             <ItemContent
@@ -68,15 +68,12 @@ export default class Results extends Component {
 const ItemContent = (props) => {
   const { name, description, image } = props;
   return (
-    <div className="col-md col-xl-3 col-lg-3 item">
-      <img
-        src={image}
-        alt=""
-        style={{ Height: '5px', Width: '100vw', marginTop: '10px' }}
-        className="img-fluid"
-      />
-      <h3 className="title">{name}</h3>
-      <p className="desc">{description}</p>
+    <div className="col-md-4 col-xl-3 col-xs-1">
+      <div className="result">
+        <img src={image} alt="" style={{ Height: '5px', Width: '100vw' }} className="img-fluid" />
+        <h3 className="title">{name}</h3>
+        <p className="desc">{description}</p>
+      </div>
     </div>
   );
 };
