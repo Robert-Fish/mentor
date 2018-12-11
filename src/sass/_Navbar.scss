@@ -1,0 +1,30 @@
+.bg-mentor {
+  background: $main;
+
+  .navbar,
+  .navbar-dark,
+  .navbar-brand {
+    font-family: "Poppins", sans-serif;
+    color: $third;
+  }
+}
+
+.form-control {
+  font-family: "Poppins", sans-serif;
+  border-radius: 0;
+  outline: none;
+  color: #fff;
+  border: none;
+  background: $secondary;
+
+  &::placeholder {
+    color: #fff;
+  }
+
+  &:focus {
+    font-weight: bold;
+    // transition: all ease-in-out 0.3s;
+    color: #fff;
+    background: $secondary;
+  }
+}
