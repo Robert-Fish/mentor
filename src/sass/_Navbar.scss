@@ -14,7 +14,7 @@
   border-radius: 0;
   outline: none;
   color: #fff;
-  border: none;
+  border: $secondary 2px solid;
   background: $secondary;
 
   &::placeholder {
@@ -26,5 +26,6 @@
     // transition: all ease-in-out 0.3s;
     color: #fff;
     background: $secondary;
+    border-bottom: 2px solid #fff;
   }
 }
