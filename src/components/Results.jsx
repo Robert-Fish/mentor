@@ -80,3 +80,9 @@ const ItemContent = (props) => {
     </div>
   );
 };
+
+ItemContent.propTypes = {
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+};
