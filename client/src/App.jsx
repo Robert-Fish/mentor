@@ -6,7 +6,7 @@ import Navbar from './components/layout/Navbar';
 import Results from './components/Results';
 
 const client = new ApolloClient({
-  uri: 'http://localhost:4000/graphql',
+  uri: 'http://localhost:5000/graphql',
 });
 export default function App() {
   return (
