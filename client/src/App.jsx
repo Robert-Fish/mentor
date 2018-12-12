@@ -13,6 +13,7 @@ export default function App() {
     <ApolloProvider client={client}>
       <div className="App">
         <Navbar />
+
         <Results />
       </div>
     </ApolloProvider>

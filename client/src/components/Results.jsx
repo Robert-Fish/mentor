@@ -14,14 +14,28 @@ const COURSE_QUERY = gql`
     }
   }
 `;
+
 export default function Results() {
   return (
     <div className="container mt-3">
+      <h1 className="mb-4 text-center text-white">Latest Courses</h1>
+      <div className="categories text-center mb-4">
+        <button className="btn btn-html" type="button">
+          html
+        </button>
+        <button className="btn btn-css" type="button">
+          css
+        </button>
+        <button className="btn btn-js" type="button">
+          js
+        </button>
+      </div>
+
       <div className="row">
         <Query query={COURSE_QUERY}>
           {({ loading, error, data }) => {
             if (loading) return <Spinner />;
-            if (error) console.error(error);
+            if (error) return <h3>{error}</h3>;
             return (
               <Fragment>
                 {data.courses.map(course => (
@@ -29,6 +43,7 @@ export default function Results() {
                     name={course.title}
                     key={course.title}
                     image={course.image_480x270}
+                    url={course.url}
                   />
                 ))}
               </Fragment>
@@ -41,20 +56,26 @@ export default function Results() {
 }
 
 const ItemContent = (props) => {
-  const { name, description, image } = props;
+  const { name, image, url } = props;
   return (
     <div className="col-md-4 col-xl-3 col-xs-5">
-      <div className="result">
-        <img src={image} alt="" style={{ Height: '5px', Width: '100vw' }} className="img-fluid" />
-        <h3 className="title">{name}</h3>
-        <p className="desc">{description}</p>
-      </div>
+      <a
+        href={`http://udemy.com${url}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ textDecoration: 'none' }}
+      >
+        <div className="result">
+          <img src={image} alt="" className="img-fluid" />
+          <h3 className="title">{name}</h3>
+        </div>
+      </a>
     </div>
   );
 };
 
 ItemContent.propTypes = {
   name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
 };

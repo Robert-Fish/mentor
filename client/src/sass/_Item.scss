@@ -1,15 +1,22 @@
 .result {
-  background: #4fb99f;
+  background: $third;
   min-height: 22rem;
+  // -webkit-box-shadow: 2px 11px 35px 0px $third;
+  // -moz-box-shadow: 2px 11px 35px 0px $third;
+  // box-shadow: 2px 11px 35px 0px $third;
+  cursor: pointer;
+  &:hover {
+    transition: all ease-in-out 0.28s;
+    background: $secondary;
+  }
 
   .title {
     color: #fff;
     text-align: center;
     text-transform: capitalize;
     font-weight: bold;
-  }
-  .desc {
-    color: #fff;
-    text-align: center;
+    user-select: none;
+    font-size: 1.5rem;
+    padding: 1rem;
   }
 }

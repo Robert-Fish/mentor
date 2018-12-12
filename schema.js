@@ -6,6 +6,7 @@ const {
   GraphQLSchema
 } = require("graphql");
 const axios = require("axios");
+const keys = require("./keys.js");
 
 // Course Type
 const CourseType = new GraphQLObjectType({
@@ -14,7 +15,11 @@ const CourseType = new GraphQLObjectType({
     title: { type: GraphQLString },
     url: { type: GraphQLString },
     price: { type: GraphQLString },
-    image_480x270: { type: GraphQLString }
+    image_480x270: { type: GraphQLString },
+    id: { type: GraphQLInt },
+    avg_rating: { type: GraphQLString },
+    primary_category: { type: GraphQLString },
+    price: { type: GraphQLString }
   })
 });
 
@@ -25,10 +30,9 @@ const RootQuery = new GraphQLObjectType({
       type: new GraphQLList(CourseType),
       resolve(parent, args) {
         return axios
-          .get(" https://www.udemy.com/api-2.0/courses", {
+          .get(" https://www.udemy.com/api-2.0/courses/?page_size=20", {
             headers: {
-              Authorization:
-                "Basic Vk5iWkFheW1hZUN2WmREcHJVejUyQnVIQkdJTzIxWmdpYm1KYkRxODpqNnN3a2Z0OEpzMTJFN3BDUmppN3lvOGZDVWZsQloxS1I0MW9IM0JXUlZ4WDlRRFdDNlBoc0R5YjlzUHhZeHU5NERTRHhFbmREVzRlMTVYeE9PZkdHWXNsTHRFQXh6czZkanpackg1YXRwRVEzT3NsREVhWnE2SWxEYjlxWFVQaQ=="
+              Authorization: keys.udemyKey
             }
           })
           .then(res => res.data.results);

@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-mentor">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-mentor sticky-top">
       <a className="navbar-brand" href="/">
         Mentor
       </a>

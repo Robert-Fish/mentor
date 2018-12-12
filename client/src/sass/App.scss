@@ -2,6 +2,11 @@
 @import "./Navbar";
 @import "./Item";
 
+html,
+body {
+  background: $main;
+}
+
 .no-gutters {
   margin-right: 0;
   margin-left: 0;
@@ -10,5 +15,47 @@
   > [class*="col-"] {
     padding-right: 0;
     padding-left: 0;
+  }
+}
+
+.btn {
+  color: #fff;
+  margin: 0 1rem;
+  width: 5rem;
+  text-align: center;
+  border-width: 3px;
+  border-style: solid;
+  text-transform: uppercase;
+}
+.btn-html {
+  background: $html;
+  border-color: $html;
+
+  &:hover {
+    background: #fff;
+    border-color: $html;
+    color: $html;
+    transition: all 0.3s ease-in-out;
+  }
+}
+.btn-js {
+  background: $js;
+  border-color: $js;
+
+  &:hover {
+    background: #fff;
+    border-color: $js;
+    color: $js;
+    transition: all 0.3s ease-in-out;
+  }
+}
+.btn-css {
+  background: $css;
+  border-color: $css;
+  &:hover {
+    background: #fff;
+    border-color: $css;
+    color: $css;
+    transition: all 0.3s ease-in-out;
   }
 }

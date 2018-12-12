@@ -8,6 +8,11 @@
     color: $third;
   }
 }
+.navbar {
+  border-bottom-color: $third;
+  border-bottom-width: 5px;
+  border-bottom-style: solid;
+}
 
 .form-control {
   font-family: "Poppins", sans-serif;
