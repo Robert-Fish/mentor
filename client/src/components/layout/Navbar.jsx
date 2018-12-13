@@ -19,21 +19,21 @@ export default function Navbar() {
       </button>
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
-          {/* <li className="nav-item active">
-            <a className="nav-link" href="/">
-              Home
-              <span className="sr-only">(current)</span>
+          <li className="nav-item active">
+            <a className="nav-link" href="/about">
+              About
+              <span className="sr-only" />
             </a>
-          </li> */}
+          </li>
         </ul>
-        <form className="form-inline my-2 my-lg-0">
+        {/* <form className="form-inline my-2 my-lg-0">
           <input
-            className="form-control mr-sm-2"
+            className="form-control mr-sm-2 input-group"
             type="search"
             placeholder="Search"
             aria-label="Search"
           />
-        </form>
+        </form> */}
       </div>
     </nav>
   );

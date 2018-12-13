@@ -44,6 +44,7 @@ export default function Results() {
                     key={course.title}
                     image={course.image_480x270}
                     url={course.url}
+                    price={course.price}
                   />
                 ))}
               </Fragment>
@@ -56,7 +57,9 @@ export default function Results() {
 }
 
 const ItemContent = (props) => {
-  const { name, image, url } = props;
+  const {
+    name, image, url, price,
+  } = props;
   return (
     <div className="col-md-4 col-xl-3 col-xs-5">
       <a
@@ -66,8 +69,9 @@ const ItemContent = (props) => {
         style={{ textDecoration: 'none' }}
       >
         <div className="result">
-          <img src={image} alt="" className="img-fluid" />
+          <img src={image} alt="" style={{ width: '100%' }} className="img-fluid" />
           <h3 className="title">{name}</h3>
+          <h4 className="price">{price}</h4>
         </div>
       </a>
     </div>
@@ -76,6 +80,11 @@ const ItemContent = (props) => {
 
 ItemContent.propTypes = {
   name: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
+  image: PropTypes.string,
   url: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+};
+
+ItemContent.defaultProps = {
+  image: 'null',
 };

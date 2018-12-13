@@ -30,11 +30,14 @@ const RootQuery = new GraphQLObjectType({
       type: new GraphQLList(CourseType),
       resolve(parent, args) {
         return axios
-          .get(" https://www.udemy.com/api-2.0/courses/?page_size=20", {
-            headers: {
-              Authorization: keys.udemyKey
+          .get(
+            " https://www.udemy.com/api-2.0/courses/?page_size=20&ordering=highest-rated",
+            {
+              headers: {
+                Authorization: keys.udemyKey
+              }
             }
-          })
+          )
           .then(res => res.data.results);
       }
     }
