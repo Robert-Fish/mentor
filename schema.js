@@ -28,8 +28,8 @@ const RootQuery = new GraphQLObjectType({
   fields: {
     courses: {
       type: new GraphQLList(CourseType),
-      resolve(parent, args) {
-        return axios
+      async resolve(parent, args) {
+        return await axios
           .get(
             " https://www.udemy.com/api-2.0/courses/?page_size=20&ordering=highest-rated",
             {

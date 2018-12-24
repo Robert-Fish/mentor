@@ -17,21 +17,22 @@ const COURSE_QUERY = gql`
 
 export default function Results() {
   return (
-    <div className="container mt-3">
-      <h1 className="mb-4 text-center text-white">Latest Courses</h1>
+    <div className="container mt-3 ">
+      <h1 className="mb-4 text-center text-white tracking-in-contract">Latest Courses</h1>
+      <p1>hello</p1>
       <div className="categories text-center mb-4">
-        <button className="btn btn-html" type="button">
+        <button className="btn btn-html tracking-in-contract" type="button">
           html
         </button>
-        <button className="btn btn-css" type="button">
+        <button className="btn btn-css tracking-in-contract" type="button">
           css
         </button>
-        <button className="btn btn-js" type="button">
+        <button className="btn btn-js tracking-in-contract" type="button">
           js
         </button>
       </div>
 
-      <div className="row">
+      <div className="row ">
         <Query query={COURSE_QUERY}>
           {({ loading, error, data }) => {
             if (loading) return <Spinner />;
@@ -61,7 +62,7 @@ const ItemContent = (props) => {
     name, image, url, price,
   } = props;
   return (
-    <div className="col-md-4 col-xl-3 col-xs-5">
+    <div className="col-md-4 col-xl-3 col-xs-5 slide-in-elliptic-top-fwd">
       <a
         href={`http://udemy.com${url}`}
         target="_blank"
@@ -69,7 +70,7 @@ const ItemContent = (props) => {
         style={{ textDecoration: 'none' }}
       >
         <div className="result">
-          <img src={image} alt="" style={{ width: '100%' }} className="img-fluid" />
+          <img src={image} alt="" className="img-fluid" />
           <h3 className="title">{name}</h3>
           <h4 className="price">{price}</h4>
         </div>
